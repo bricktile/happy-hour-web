@@ -8,8 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "directory-tree": "^2.2.4",
+    "file-loader": "^6.0.0",
+    "github-markdown-css": "^4.0.0",
     "next": "9.4.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-markdown": "^4.3.1",
+    "remark-parse": "^8.0.3",
+    "sass": "^1.26.10",
+    "url-loader": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^1.1.1",
+    "simple-git": "^2.15.0"
   }
 }
