@@ -21,9 +21,9 @@ export default function ({ fileItem = {}, prefix }) {
 		<>
 			<Head>
 				{/* 如果是undefined的话，会报错 */}
-				<title>{`${fileItem.name}`}</title>
+				<title>{`${fileItem.name || ""}`}</title>
 			</Head>
-			<main>
+			<main className="markdown-body">
 				<Container>
 					<h1>{fileItem.name}</h1>
 					{node}

@@ -16,8 +16,11 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-markdown": "^4.3.1",
+    "remark": "^12.0.1",
     "remark-parse": "^8.0.3",
     "sass": "^1.26.10",
+    "unified": "^9.1.0",
+    "unified-stream": "^1.0.6",
     "url-loader": "^4.1.0"
   },
   "devDependencies": {
