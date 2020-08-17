@@ -1,15 +1,24 @@
 import Head from 'next/head';
-import Link from 'next/link';
+import unified from 'unified'
+import parse from 'remark-parse'
+import highlight from 'remark-highlight.js'
+import html from 'remark-html'
+
 import Container from '../../components/container';
 import FileList from '../../components/file-list';
-import ReactMarkdown from 'react-markdown';
 
 import blogFileTree from '../../config/_fileTree.config';
 
 export default function ({ fileItem = {}, prefix }) {
 	let node = null;
 	if (fileItem.extension === '.md') {
-		node = <ReactMarkdown source={fileItem.content} />;
+		node = null;
+		let a = unified()
+		.use(parse)
+		.use(highlight)
+		.use(html)
+		.processSync(fileItem.content);
+			node = <div dangerouslySetInnerHTML={{__html: a.contents}}></div>
 	} else if (fileItem.type === 'directory') {
 		node = (
 			<FileList fileList={fileItem.children} pathPrefix={`/post/${prefix}`} />
