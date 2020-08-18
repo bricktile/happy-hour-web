@@ -31,3 +31,4 @@ yarn-error.log*
 
 # pages config
 config/_fileTree.config.js
+.eslintcache

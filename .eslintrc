@@ -8,7 +8,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "prettier",
-    "prettier-react"
+    "prettier/react"
   ],
   "globals": {
     "React": true
