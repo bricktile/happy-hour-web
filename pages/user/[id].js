@@ -4,7 +4,7 @@ import FileList from '../../components/file-list'
 
 import blogFileTree from '../../config/_fileTree.config'
 
-export default function ({ name, children, id }) {
+export default function Main({ name, children, id }) {
   return (
     <>
       <Head>

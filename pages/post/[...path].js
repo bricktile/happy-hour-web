@@ -9,7 +9,7 @@ import FileList from '../../components/file-list'
 
 import blogFileTree from '../../config/_fileTree.config'
 
-export default function ({ fileItem = {}, prefix }) {
+export default function Post({ fileItem = {}, prefix }) {
   let node = null
   if (fileItem.extension === '.md') {
     node = null
@@ -50,7 +50,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const [userId] = params.path
   let fileItem = blogFileTree
   params.path.forEach((index) => {
     fileItem = fileItem.children[index]

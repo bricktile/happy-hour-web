@@ -4,6 +4,6 @@ import 'github-markdown-css/github-markdown.css'
 import 'highlight.js/styles/github.css'
 
 // This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
+export default function HappyHourWeb({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
