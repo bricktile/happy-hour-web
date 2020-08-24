@@ -2,7 +2,7 @@ import Link from 'next/link'
 import FolderIcon from '../../public/icons/folder.svg'
 import FileIcon from '../../public/icons/file.svg'
 
-export default function ({ fileList, pathPrefix = '' }) {
+export default function FileList({ fileList, pathPrefix = '' }) {
   return (
     <ul>
       {fileList.map((file, index) => (

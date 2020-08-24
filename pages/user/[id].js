@@ -4,7 +4,7 @@ import FileList from '../../components/file-list'
 
 import blogFileTree from '../../config/_fileTree.config'
 
-export default function Main({ name, children, id }) {
+export default function Main({ name, children = [], id }) {
   return (
     <>
       <Head>
@@ -21,10 +21,16 @@ export default function Main({ name, children, id }) {
 }
 
 export async function getStaticPaths() {
+  const paths = []
+  blogFileTree.children.forEach((item, index) => {
+    if (item.children) {
+      paths.push({
+        params: { id: `${index}` }
+      })
+    }
+  })
   return {
-    paths: blogFileTree.children.map((_, index) => ({
-      params: { id: `${index}` }
-    })),
+    paths,
     fallback: true
   }
 }
