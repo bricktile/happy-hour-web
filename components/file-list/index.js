@@ -10,9 +10,13 @@ export default function FileList({ fileList, pathPrefix = '' }) {
           <Link href={`${file.pathPrefix || pathPrefix}/${index}`}>
             <a className="file">
               {file.type === 'directory' ? (
-                <FolderIcon className="happy-icon" />
+                <span className="happy-icon">
+                  <FolderIcon />
+                </span>
               ) : (
-                <FileIcon className="happy-icon" />
+                <span className="happy-icon">
+                  <FileIcon />
+                </span>
               )}
               <span>{file.name}</span>
             </a>
@@ -35,6 +39,19 @@ export default function FileList({ fileList, pathPrefix = '' }) {
               .file {
                 display: flex;
                 align-items: center;
+              }
+
+              a,
+              a:visited,
+              a:active {
+                color: #333;
+                text-decoration: none;
+                align-items: center;
+                display: flex;
+              }
+              a:hover {
+                text-decoration: none;
+                color: #3e75c3;
               }
 
               .happy-icon {

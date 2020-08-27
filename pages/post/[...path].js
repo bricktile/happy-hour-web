@@ -29,7 +29,6 @@ export default function Post({ fileItem = {}, prefix }) {
   return (
     <>
       <Head>
-        {/* 如果是undefined的话，会报错 */}
         <title>{`${fileItem.name || ''}`}</title>
       </Head>
       <main className="markdown-body">
