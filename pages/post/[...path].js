@@ -12,7 +12,6 @@ import blogFileTree from '../../config/_fileTree.config'
 export default function Post({ fileItem = {}, prefix }) {
   let node = null
   if (fileItem.extension === '.md') {
-    node = null
     let a = unified()
       .use(parse)
       .use(highlight)
@@ -31,12 +30,10 @@ export default function Post({ fileItem = {}, prefix }) {
       <Head>
         <title>{`${fileItem.name || ''}`}</title>
       </Head>
-      <main className="markdown-body">
-        <Container>
-          <h1>{fileItem.name}</h1>
-          {node}
-        </Container>
-      </main>
+      <Container>
+        <h1>{fileItem.name}</h1>
+        {node}
+      </Container>
     </>
   )
 }

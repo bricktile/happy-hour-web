@@ -41,19 +41,6 @@ export default function FileList({ fileList, pathPrefix = '' }) {
                 align-items: center;
               }
 
-              a,
-              a:visited,
-              a:active {
-                color: #333;
-                text-decoration: none;
-                align-items: center;
-                display: flex;
-              }
-              a:hover {
-                text-decoration: none;
-                color: #3e75c3;
-              }
-
               .happy-icon {
                 margin-right: 20px;
               }
