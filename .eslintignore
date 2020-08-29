@@ -1,2 +1,4 @@
 scripts
 commitlint.config.js
+next.config.js
+config/*

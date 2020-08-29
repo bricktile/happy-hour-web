@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
-import blogFileTree from '../config/_fileTree.config'
-import Container from '../components/container'
-import FileList from '../components/file-list'
-import GithubIcon from '../public/icons/github.svg'
+import blogFileTree from '@/config/_fileTree.config'
+import Container from 'src/components/container'
+import FileList from 'src/components/file-list'
+import GithubIcon from '../assets/img/icons/github.svg'
 
 export default function Home() {
   const users = blogFileTree.children.map((file) => ({

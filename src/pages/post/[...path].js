@@ -4,10 +4,10 @@ import parse from 'remark-parse'
 import highlight from 'remark-highlight.js'
 import html from 'remark-html'
 
-import Container from '../../components/container'
-import FileList from '../../components/file-list'
+import Container from 'src/components/container'
+import FileList from 'src/components/file-list'
 
-import blogFileTree from '../../config/_fileTree.config'
+import blogFileTree from '@/config/_fileTree.config'
 
 export default function Post({ fileItem = {}, prefix }) {
   let node = null

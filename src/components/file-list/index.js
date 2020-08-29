@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import FolderIcon from '../../public/icons/folder.svg'
-import FileIcon from '../../public/icons/file.svg'
+import FolderIcon from '../../assets/img/icons/folder.svg'
+import FileIcon from '../../assets/img/icons/file.svg'
 
 export default function FileList({ fileList, pathPrefix = '' }) {
   return (

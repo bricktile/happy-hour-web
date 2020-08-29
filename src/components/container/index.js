@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Homepage from '../../public/icons/home.svg'
+import Homepage from '../../assets/img/icons/home.svg'
 export default function Layout(props) {
   return (
     <main>

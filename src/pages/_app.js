@@ -1,4 +1,4 @@
-import '../styles.scss'
+import 'src/styles/index.scss'
 import 'github-markdown-css/github-markdown.css'
 // import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css'

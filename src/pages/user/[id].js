@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Container from '../../components/container'
-import FileList from '../../components/file-list'
+import Container from 'src/components/container'
+import FileList from 'src/components/file-list'
 
-import blogFileTree from '../../config/_fileTree.config'
+import blogFileTree from '@/config/_fileTree.config'
 
 export default function Main({ name, children = [], id }) {
   return (

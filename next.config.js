@@ -1,6 +1,10 @@
+const path = require('path')
+
 module.exports = (_, { defaultConfig, nextConfig = {} }) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
+      config.resolve.alias['@'] = path.join(__dirname, './')
+      config.resolve.alias['src'] = path.join(__dirname, 'src')
       const { isServer } = options
       nextConfig = Object.assign(
         { inlineImageLimit: 8192, assetPrefix: '' },
