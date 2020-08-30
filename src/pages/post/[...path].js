@@ -9,7 +9,14 @@ import FileList from 'src/components/file-list'
 
 import blogFileTree from '@/config/_fileTree.config'
 
-export default function Post({ fileItem = {}, prefix }) {
+import ArrowIcon from '../../assets/img/icons/arrow.svg'
+
+export default function Post({
+  fileItem = {},
+  prevItem = {},
+  nextItem = {},
+  prefix
+}) {
   let node = null
   if (fileItem.extension === '.md') {
     let a = unified()
@@ -31,9 +38,49 @@ export default function Post({ fileItem = {}, prefix }) {
         <title>{`${fileItem.name || ''}`}</title>
       </Head>
       <Container>
+        <div className="navigation">
+          <div className="navigation-item">
+            <span className="prev-icon arrow-icon">
+              {prevItem && <ArrowIcon />}
+            </span>
+
+            <span>{prevItem && prevItem.name}</span>
+          </div>
+          <div className="navigation-item">
+            <span>{nextItem && nextItem.name}</span>
+            <span className="next-icon arrow-icon">
+              {nextItem && <ArrowIcon />}
+            </span>
+          </div>
+        </div>
         <h1>{fileItem.name}</h1>
         {node}
       </Container>
+      <style jsx>{`
+        .container {
+          height: 100%;
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          padding: 15px;
+        }
+        .navigation-item {
+          display: flex;
+          align-items: center;
+        }
+        .arrow-icon {
+          display: flex;
+          align-items: center;
+        }
+        .next-icon {
+          transform: rotate(180deg);
+          margin-left: 10px;
+        }
+        .prev-icon {
+          margin-right: 10px;
+        }
+      `}</style>
     </>
   )
 }
@@ -47,9 +94,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let fileItem = blogFileTree
-  params.path.forEach((index) => {
-    fileItem = fileItem.children[index]
+  let prevItem, nextItem
+  const { path = [] } = params
+  path.forEach((key, index) => {
+    if (index === path.length - 1) {
+      prevItem = fileItem.children[Number(key) - 1] || null
+      nextItem = fileItem.children[Number(key) + 1] || null
+    }
+    fileItem = fileItem.children[key]
   })
 
-  return { props: { fileItem, prefix: params.path.join('/') } }
+  return {
+    props: { fileItem, prefix: params.path.join('/'), prevItem, nextItem }
+  }
 }
